@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✓</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Список задач</h1>
+            <p class="subtitle">Профессиональная система управления задачами</p>
+            <div class="header-controls">
+                <div class="theme-switcher">
+                    <button id="themeToggle" class="theme-btn">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-text">Темная тема</span>
+                    </button>
+                </div>
+                <select id="prioritySelect" class="priority-select">
+                    <option value="low">🟢 Низкий</option>
+                    <option value="medium" selected>🟡 Средний</option>
+                    <option value="high">🔴 Высокий</option>
+                </select>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <!-- ОДИН input-section с ТРЕМЯ полями -->
+            <div class="input-section">
+                <input type="text" 
+                       id="taskInput" 
+                       class="task-input" 
+                       placeholder="Введите новую задачу..."
+                       autocomplete="off">
+                
+                <input type="text" 
+                       id="tagInput" 
+                       class="tag-input" 
+                       placeholder="Теги (через запятую)"
+                       autocomplete="off">
+                       
+                <button id="addBtn" class="add-btn">
+                    <span class="btn-icon">+</span> Добавить задачу
+                </button>
+            </div>
+            
+            <div class="filters-section">
+                <button class="filter-btn active" data-filter="all">Все задачи</button>
+                <button class="filter-btn" data-filter="active">Активные</button>
+                <button class="filter-btn" data-filter="completed">Выполненные</button>
+            </div>
+
+<div class="toggle-completed-section">
+    <button id="toggleCompletedBtn" class="toggle-completed-btn">
+        <span class="toggle-icon">👁️</span>
+        <span class="toggle-text">Скрыть выполненные</span>
+    </button>
+</div>
+            
+            <div class="sort-section">
+                <span class="sort-label">Сортировка:</span>
+                <button class="sort-btn active" data-sort="newest">Сначала новые</button>
+                <button class="sort-btn" data-sort="oldest">Сначала старые</button>
+                <button class="sort-btn" data-sort="priority">По приоритету</button>
+            </div>
+            
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    Прогресс: <span id="progressPercent">0%</span>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stats-left">
+                    <span class="stats-item">
+                        <span class="stats-label">Всего:</span>
+                        <span id="totalCount" class="stats-value">0</span>
+                    </span>
+                    <span class="stats-item">
+                        <span class="stats-label">Активные:</span>
+                        <span id="activeCount" class="stats-value">0</span>
+                    </span>
+                    <span class="stats-item">
+                        <span class="stats-label">Выполненные:</span>
+                        <span id="completedCount" class="stats-value">0</span>
+                    </span>
+                </div>
+                <button id="clearCompleted" class="clear-btn">
+                    Очистить выполненные
+                </button>
+            </div>
+            
+            <!-- УДАЛИ эти строки - они лишние! -->
+            <!-- <span class="task-text" contenteditable="false">${task.text}</span> -->
+            <!-- <span class="task-date">${formatDate(task.createdAt)}</span> -->
+            
+            <ul id="taskList" class="task-list">
+                <!-- Tasks will be added here by JavaScript -->
+            </ul>
+        </main>
+        
+        <footer class="footer">
+            <p class="hint">Дважды щелкните задачу для редактирования | Автоматическое сохранение задач в браузере</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
