@@ -412,7 +412,6 @@ h1 {
     background: linear-gradient(90deg, rgba(56, 161, 105, 0.05) 0%, transparent 10%);
 }
 
-/* Для темной темы сделаем еще заметнее */
 [data-theme="dark"] .task-item.priority-high {
     background: linear-gradient(90deg, rgba(229, 62, 62, 0.15) 0%, transparent 10%);
 }
@@ -475,7 +474,6 @@ h1 {
     font-size: 14px;
 }
 
-/* Обновляем стили для темной темы */
 [data-theme="dark"] .task-input {
     background: #4a5568;
     color: #f7fafc;
@@ -785,4 +783,5 @@ h1 {
 
 [data-theme="dark"] .toggle-completed-btn:hover {
     background: var(--accent-color);
+
 }
